@@ -1,5 +1,7 @@
 # ----------------- Implementation (TODO) -----------------
 # TODO: Implement the method below.
+def group_by_prefix(word, n)
+end
 # ----------------- Color helpers -----------------
 def green(t)  = "\e[32m#{t}\e[0m"
 def red(t)    = "\e[31m#{t}\e[0m"

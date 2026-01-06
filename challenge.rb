@@ -1,7 +1,24 @@
 # ----------------- Implementation (TODO) -----------------
 # TODO: Implement the method below.
-def group_by_prefix(word, n)
+def group_by_prefix(words, n)
+  raise ArgumentError unless words.is_a?(Array)
+  raise ArgumentError unless n.is_a?(Integer) && n > 0
+
+  groups = {}
+
+  words.each do |word|
+    next unless word.is_a?(String)
+    next if word.length < n
+
+    prefix = word[0, n].downcase
+
+    groups[prefix] ||= []
+    groups[prefix] << word
+  end
+
+  groups.values
 end
+
 # ----------------- Color helpers -----------------
 def green(t)  = "\e[32m#{t}\e[0m"
 def red(t)    = "\e[31m#{t}\e[0m"
